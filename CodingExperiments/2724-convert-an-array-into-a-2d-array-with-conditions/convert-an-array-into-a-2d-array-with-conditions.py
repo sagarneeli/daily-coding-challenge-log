@@ -6,8 +6,7 @@ class Solution:
         for num in nums:
             current_row = count[num]
             if len(result) == current_row:
-                result.append([])
-            
+                result.append([])     
             result[current_row].append(num)
             count[num] += 1
         
