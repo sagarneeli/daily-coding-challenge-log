@@ -6,7 +6,7 @@ This repository serves as my personal coding journal, documenting my daily progr
 
 ## 📁 Folder Structure
 
-- **DailyChallenges/**
+- **CodingExperiments/**
   - Contains daily coding challenge solutions.
   - Organized by date or problem categories.
 
