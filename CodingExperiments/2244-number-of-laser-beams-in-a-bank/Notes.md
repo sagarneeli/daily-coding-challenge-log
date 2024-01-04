@@ -1,4 +1,6 @@
-<h2>number-of-laser-beams-in-a-bank Notes</h2><hr>### Complexity Analysis
+<h2>number-of-laser-beams-in-a-bank Notes</h2><hr>
+
+### Complexity Analysis
 
 Here, M is the number of strings in the bank and N is the average length of the strings.
 
