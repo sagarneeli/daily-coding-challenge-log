@@ -3,13 +3,7 @@ class Solution:
         count = Counter(arr)
         freqs = sorted(count.values())
 
-        unique = freqs[0]
-        for freq in freqs[1:]:
-            if freq == unique:
-                return False
-            unique = freq
-
-        return True
+        return len(freqs) == len(set(freqs))
 
 
         
