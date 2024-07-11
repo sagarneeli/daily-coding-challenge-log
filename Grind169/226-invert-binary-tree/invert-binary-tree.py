@@ -9,13 +9,11 @@ class Solution:
         def dfs(node):
             if not node:
                 return node
-            
-            left = node.left
-            right = node.right
-            node.left = dfs(right)
-            node.right = dfs(left)
+
+            left = dfs(node.left)
+            right = dfs(node.right)
+            node.left, node.right = right, left
 
             return node
-        
+
         return dfs(root)
-        
