@@ -1,6 +1,19 @@
 class Solution:
     def isPalindrome(self, s: str) -> bool:
-        clean_str = "".join([w.lower() for w in s if w.isalnum() or w.isspace()])
-        clean_str = "".join(clean_str.split())
-        return clean_str == clean_str[::-1]
+        i, j = 0, len(s) - 1
+
+        while i < j:
+            if not s[i].isalnum():
+                i += 1
+                continue
+            if not s[j].isalnum():
+                j -= 1
+                continue
+            if s[i].lower() != s[j].lower():
+                return False
+            
+            i += 1
+            j -= 1
+        
+        return True
         
