@@ -8,7 +8,7 @@ class Solution:
 
         stack = []
         for ch in s:
-            if ch in list(hashmap.values()):
+            if ch not in hashmap:
                 stack.append(ch)
                 continue
             if not stack or stack[-1] != hashmap[ch]:
