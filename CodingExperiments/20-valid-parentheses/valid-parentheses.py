@@ -13,6 +13,7 @@ class Solution:
                 continue
             if not stack or stack[-1] != hashmap[ch]:
                 return False
+                
             stack.pop()
 
         return not stack
