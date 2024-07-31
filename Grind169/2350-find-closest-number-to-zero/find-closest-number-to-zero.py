@@ -1,15 +1,18 @@
 class Solution:
     def findClosestNumber(self, nums: List[int]) -> int:
-        dist_to_num = {}
+        closest_num = nums[0]
+
         for n in nums:
-            diff = abs(n) - 0
-            if diff not in dist_to_num:
-                dist_to_num[diff] = [n]
-            else:
-                dist_to_num[diff].append(n)
+            if abs(n) < abs(closest_num):
+                closest_num = n
         
-        closest_num = min(dist_to_num.keys())
-        return max(dist_to_num[closest_num])
+        if closest_num < 0 and abs(closest_num) in nums:
+            return abs(closest_num)
+        
+        return closest_num
+
+        # Time - O(N)
+        # Space - O(1)
         
 
 
