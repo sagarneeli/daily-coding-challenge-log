@@ -1,5 +1,14 @@
 class Solution:
-    def minimumSize(self, nums: List[int], max_operations: int) -> int:
+    def minimumSize(self, nums: List[int], maxOperations: int) -> int:
+        def can_divide(max_balls_in_bag):
+            ops = 0
+            for n in nums:
+                ops += ceil(n / max_balls_in_bag) - 1
+                if ops > maxOperations:
+                    return False
+            return True
+                
+            
         # Binary search bounds
         left = 1
         right = max(nums)
@@ -9,7 +18,7 @@ class Solution:
             middle = (left + right) // 2
 
             # Check if a valid distribution is possible with the current middle value
-            if self._is_possible(middle, nums, max_operations):
+            if can_divide(middle):
                 # If possible, try a smaller value (shift right to middle)
                 right = middle
             else:
